@@ -3,15 +3,27 @@ import "./background.css";
 
 const Background = () => {
   const [hoveredLines, setHoveredLines] = useState([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 425);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 425);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       const cursorX = e.clientX;
       const cursorY = e.clientY;
-      const range = 100; // Aumente esse valor para expandir a área de efeito
+      const range = 100;
 
       const lines = document.querySelectorAll(".grid-line");
-
       let affectedLines = [];
 
       lines.forEach((line) => {
@@ -54,14 +66,14 @@ const Background = () => {
         <div
           key={`v-${i}`}
           className="grid-line vertical"
-          style={{ left: `${i * 5}%` }}
+          style={{ left: isMobile ? `${i * 15}%` : `${i * 5}%` }}
         ></div>
       ))}
       {[...Array(20)].map((_, i) => (
         <div
           key={`h-${i}`}
           className="grid-line horizontal"
-          style={{ top: `${i * 9}%` }}
+          style={{ top: isMobile ? `${i * 10}%` : `${i * 9}%` }}
         ></div>
       ))}
     </div>
