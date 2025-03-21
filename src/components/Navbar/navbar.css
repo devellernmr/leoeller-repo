@@ -1,0 +1,251 @@
+.sidebar {
+  background-color: #111111;
+  width: 270px;
+  position: fixed;
+  margin: 16px;
+  border-radius: 16px;
+  height: calc(100vh - 16px);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  z-index: 1000;
+
+  .sidebar-header {
+    position: relative;
+    display: flex;
+    padding: 25px 20px;
+    align-items: center;
+    justify-content: space-between;
+
+    .toggler {
+      cursor: pointer;
+      height: 35px;
+      width: 35px;
+      border: 1px solid #707070;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background-color: transparent;
+      transition: 0.6s ease-in-out;
+
+      &:hover {
+        background-color: white;
+        color: black;
+        transition: 0.6s ease-in-out;
+      }
+
+      span {
+        font-size: 1.72rem;
+      }
+    }
+
+    .menu-toggler{
+      display: none;
+    }
+
+    .header-logo h1 {
+      color: #fff;
+      font-weight: 200;
+      font-size: 2rem;
+    }
+  }
+
+  .sidebar-nav {
+    transition: 0.8s ease-in-out;
+
+    .nav-link {
+      display: flex;
+      gap: 12px;
+      color: #fff;
+      text-decoration: none;
+      list-style: none;
+      padding: 12px 15px;
+      position: relative;
+      border-radius: 12px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #5f009e;
+        color: #000000;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.5s ease-out;
+        border-radius: 12px;
+        z-index: -1;
+        box-shadow: 0 0 10px #5f009e;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 4px;
+      padding: 0 15px;
+      flex-direction: column;
+    }
+  }
+}
+
+
+.sidebar.collapsed {
+  width: 85px; /* Largura da sidebar quando colapsada */
+  text-align: center;
+  display: flex;
+
+  .header-logo h1 {
+    opacity: 0;
+  }
+
+  .sidebar-header {
+    justify-content: center;
+  }
+
+  .sidebar-header .toggler {
+    position: absolute;
+  }
+
+  .sidebar.collapsed .sidebar-header .toggler {
+    transform: translate(-4px, 65px);
+  }
+
+  .sidebar-nav {
+    .nav-link {
+      .nav-label {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    margin: 13px;
+    width: calc(100% - 28px);
+    & .sidebar-header {
+      .menu-toggler {
+          display: block;
+      }
+  }
+  }
+
+  .sidebar-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 8px 10px;
+    border-radius: 16px;
+    transition: 0.6s ease-in-out;
+    .sidebar-toggler {
+      display: none !important; /* Esconde o sidebar-toggler em dispositivos móveis */
+    }
+
+
+    .header-logo h1 {
+      display: none;
+    }
+  }
+
+  .sidebar-nav .nav-list {
+    padding: 0 10px;
+    transition: 0.6s ease-in-out;
+    padding: 12px 15px;
+  }
+
+  .sidebar-nav .nav-link {
+    gap: 10px;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .sidebar-nav .nav-icon {
+    font-size: 1.37rem;
+  }
+
+  .sidebar.collapsed {
+    .sidebar-nav {
+      .nav-list {
+        padding: 12px 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .sidebar {
+    background-color: #111111;
+    width: calc(100% - 28px);
+    position: fixed;
+    margin: 16px;
+    border-radius: 16px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    & .sidebar-nav {
+      .nav-list {
+        position: fixed;
+        display: flex;
+        gap: 4px;
+        padding: 0 15px;
+        flex-direction: row;
+        top: 6%;
+      }
+
+      .nav-label {
+        display: none;
+      }
+    }
+  }
+  .sidebar.collapsed {
+    width: calc(100% - 28px); /* Largura da sidebar quando colapsada */
+    text-align: center;
+    display: flex;
+    height: 300px;
+
+    .header-logo h1 {
+      opacity: 1;
+    }
+
+    .sidebar-header {
+      justify-content: space-between;
+    }
+
+    .sidebar-header .toggler {
+      position: sticky;
+    }
+
+    .sidebar.collapsed .sidebar-header .toggler {
+      transform: translate(0);
+    }
+
+    & .sidebar-nav {
+      .nav-list {
+        flex-direction: column;
+        padding: 43px 39px;;
+      }
+      .nav-link {
+        .nav-label {
+          opacity: 0;
+          pointer-events: none;
+        }
+        .nav-label {
+          display: block;
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+}

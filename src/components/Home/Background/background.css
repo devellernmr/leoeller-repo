@@ -1,0 +1,57 @@
+.grid-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none; /* Evita interferências no clique */
+  z-index: -10;
+  background-color: #121212;
+}
+
+.grid-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  pointer-events: none; /* Não interfere no mouse */
+}
+
+/* Linhas da grade */
+.grid-line {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.137);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Linhas verticais */
+.grid-line.vertical {
+  width: 2px;
+  height: 100%;
+}
+
+/* Linhas horizontais */
+.grid-line.horizontal {
+  height: 2px;
+  width: 100%;
+}
+
+/* Efeito neon ao passar o cursor por perto */
+.grid-line.hovered {
+  background-color: rgba(138, 43, 226, .5); /* Roxo Neon */
+  box-shadow: 0 0 15px rgba(138, 43, 226, .8), 0 0 30px rgba(138, 43, 226, 0.8),
+    0 0 50px rgba(138, 43, 226, 0.8);
+}
+
+/* Adiciona uma transição suave */
+.grid-line {
+  transition: all 0.5s ease-in-out;
+}
