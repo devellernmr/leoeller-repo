@@ -6,6 +6,7 @@ const Navbar = () => {
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
+    document.body.classList.toggle('sidebar-collapsed', !isCollapsed);
   };
 
   return (
