@@ -9,6 +9,14 @@ const Navbar = () => {
     document.body.classList.toggle('sidebar-collapsed', !isCollapsed);
   };
 
+  const handleNavLinkClick = (event, targetId) => {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <aside className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <header className="sidebar-header">
@@ -29,29 +37,25 @@ const Navbar = () => {
         <nav className="sidebar-nav">
           <ul className="nav-list primary-nav">
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="#home" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'home')}>
                 <span className="nav-icon material-symbols-outlined">home</span>
                 <span className="nav-label">Home</span>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
-                <span className="nav-icon material-symbols-outlined">
-                  Person
-                </span>
+              <a href="#about" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'about')}>
+                <span className="nav-icon material-symbols-outlined">Person</span>
                 <span className="nav-label">About</span>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
-                <span className="nav-icon material-symbols-outlined">
-                  Devices
-                </span>
+              <a href="#projects" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'projects')}>
+                <span className="nav-icon material-symbols-outlined">Devices</span>
                 <span className="nav-label">Projects</span>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="#contacts" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'contacts')}>
                 <span className="nav-icon material-symbols-outlined">Call</span>
                 <span className="nav-label">Contacts</span>
               </a>

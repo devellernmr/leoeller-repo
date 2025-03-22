@@ -2,7 +2,7 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <seciont className="homeSection">
+    <seciont className="homeSection" id="home" >
       <div className="containerDiv">
         <div className="textDiv">
           <h2>Olá, sou</h2>
