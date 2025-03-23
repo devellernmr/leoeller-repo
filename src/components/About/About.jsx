@@ -7,8 +7,8 @@ const About = () => {
         <div className="textDivAbout">
           <h2>Sobre Mim</h2>
           <p>
-            Olá, meu nome é Leonardo Eller, tenho 16 anos, moro em Minas Geras -
-            Brasil. Sou estudante do Segundo ano do Ensino Médio. Sou um
+            Olá, meu nome é Leonardo Eller , moro em Minas Geras -
+            Brasil. Sou um
             programador Front-end a pouco mais de 7 meses, tenho me esforçado em
             aprender e estudar mais sobre a área prezando a minha evolução para
             utilizar melhores e mais capacitadas ferramentas para a criação de
