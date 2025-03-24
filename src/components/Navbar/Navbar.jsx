@@ -43,13 +43,13 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'about')}>
+              <a href="#aboutSection" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'about')}>
                 <span className="nav-icon material-symbols-outlined">Person</span>
                 <span className="nav-label">About</span>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#projects" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'projects')}>
+              <a href="#projectSection" className="nav-link" onClick={(e) => handleNavLinkClick(e, 'projects')}>
                 <span className="nav-icon material-symbols-outlined">Devices</span>
                 <span className="nav-label">Projects</span>
               </a>

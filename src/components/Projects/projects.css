@@ -24,9 +24,10 @@ body.sidebar-collapsed .containerDivProjetos {
   align-items: center;
 
   .projetos-header {
+    width: 100%;
     h2 {
       font-size: 2.5rem;
-      font-weight: 300;
+      font-weight: 200;
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -36,7 +37,7 @@ body.sidebar-collapsed .containerDivProjetos {
       background-color: transparent;
       transition: background-color 0.5s ease;
       text-align: left;
-      width: vw;
+      width: 100%;
     }
 
     p {
