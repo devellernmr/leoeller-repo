@@ -387,7 +387,7 @@ body.sidebar-collapsed .containerDivProjetos {
     transition: transform 0.4s ease, box-shadow 0.3s ease, background-image 0.8s ease-in-out;
     background-color: #1c1c1c;
     cursor: pointer;
-    height: 380px !important;
+    height: 390px !important;
     width: 400px;
     padding: 2rem;
   
