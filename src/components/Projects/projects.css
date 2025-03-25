@@ -149,10 +149,10 @@ body.sidebar-collapsed .containerDivProjetos {
 @media (max-width: 1366px) {
   .containerDivProjetos {
     & .projetos-grid {
-      gap: 70px;
+      gap: 50px;
       & .projeto-card {
         height: 58vh;
-        width: 23vw;
+        width: 22vw;
         & .projeto-info {
           h3 {
             font-size: 1.3rem;

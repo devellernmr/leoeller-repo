@@ -132,6 +132,25 @@
   background-color: rgba(153, 0, 255, 0.1);
 }
 
+body.sidebar-collapsed .containerDivContacts {
+  width: 90%;
+  transition: 0.8s ease-in-out;
+}
+
+
+@media (max-width: 1366px) {
+  .contactsSection {
+    height: 80vh;
+    .contactsWrapper {
+      display: flex;
+      flex-direction: row;
+      width: 90%;
+      justify-content: flex-end;
+      gap: 0rem;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .contactsSection {
     height: auto;
@@ -216,18 +235,17 @@
           .contacts-form {
             justify-content: center;
             align-items: center;
-            
-            .contacts-input, .contacts-textarea, .contacts-button{
+
+            .contacts-input,
+            .contacts-textarea,
+            .contacts-button {
               width: 300px;
             }
-
-
           }
         }
       }
     }
   }
-
 
   .socialContainer {
     flex: 0 0 auto;
