@@ -1,15 +1,19 @@
+/* CSS padrão para dispositivos maiores que 768px */
 .contactsSection {
   width: 100%;
   height: 60vh;
   z-index: 1000;
   display: flex;
-  justify-content: flex-end;
-  position: relative; /* necessário para posicionar os ícones absolutos */
+  justify-content: left;
+  position: relative; /* necessário para posicionar os ícones se necessário */
+}
 
-  .contactsWrapper {
-    display: flex;
-    flex-direction: row;
-  }
+.contactsWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  justify-content: flex-end;
+  gap: 2rem;
 }
 
 .containerDivContacts {
@@ -21,28 +25,28 @@
   color: white;
   font-family: "inter";
   transition: 0.8s ease-in-out;
+  justify-content: left;
 }
 
 .contacts-header {
-  width: 100%;
+  width: 90%;
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1.5s ease-in-out;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+    text-align: left;
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
 
-.contacts-header h2 {
-  font-size: 2.5rem;
-  font-weight: 200;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  animation: fadeIn 1.5s ease-in-out;
-  border-bottom: 1px solid white;
-  padding-bottom: 10px;
-  background-color: transparent;
-  transition: background-color 0.5s ease;
-  text-align: left;
-  width: 100%;
-}
-
-/* Formulário */
 .contacts-form {
   display: flex;
   flex-direction: column;
@@ -51,7 +55,6 @@
   width: 50vw;
 }
 
-/* Inputs e Textarea */
 .contacts-input,
 .contacts-textarea {
   padding: 1rem;
@@ -64,7 +67,6 @@
   font-size: 1rem;
 }
 
-/* Placeholder */
 .contacts-input::placeholder,
 .contacts-textarea::placeholder {
   color: #bbb;
@@ -77,7 +79,6 @@
   box-shadow: 0 2px 6px rgba(153, 0, 255, 0.4);
 }
 
-/* Botão com animação de pulso */
 .contacts-button {
   background-color: #9900ff;
   color: #fff;
@@ -90,42 +91,26 @@
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-/* Animação de clique com keyframes */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .contacts-button:active {
   animation: pulse 0.3s ease-in-out;
 }
 
-/* Efeito de hover no botão */
 .contacts-button:hover {
   box-shadow: 0 4px 12px rgba(153, 0, 255, 0.5);
 }
 
-/* Painel das mídias sociais - posicionado à direita */
 .socialContainer {
-    display: flex;
+  display: flex;
   flex-direction: column;
   gap: 3rem;
   align-items: center;
   justify-content: center;
-  width: 10vw;
 }
 
-.socialButtons{
-    gap: 2rem;
-    position: absolute;
-    display: grid;
+.socialButtons {
+  gap: 2rem;
+  position: absolute;
+  display: grid;
 }
 
 .socialButton {
@@ -135,8 +120,7 @@
   height: 60px;
   border-radius: 50%;
   display: grid;
-  align-items: center;
-  justify-content: center;
+  place-items: center; /* atalho para alinhar horizontal e verticalmente */
   color: #fff;
   transition: transform 0.3s ease, border-color 0.3s ease,
     background-color 0.3s ease;
@@ -146,4 +130,116 @@
   transform: scale(1.1);
   border-color: #9900ff;
   background-color: rgba(153, 0, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .contactsSection {
+    height: auto;
+    padding: 6rem 2rem;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .contactsWrapper {
+    flex-direction: column;
+    align-items: flex-end;
+    display: flex;
+    align-content: flex-end;
+    justify-content: center;
+    width: 85%;
+  }
+
+  .containerDivContacts {
+    width: 100%;
+    padding: 0 2rem;
+    flex-direction: column;
+  }
+
+  .contacts-form {
+    width: 100%;
+  }
+
+  .socialContainer {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Caso os botões de mídias sociais estejam em .socialButtons, torne-os parte do fluxo normal */
+  .socialButtons {
+    position: static;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .contactsSection {
+    height: auto;
+    padding: 6rem 2rem;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+
+    .contactsWrapper {
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+
+      .containerDivContacts {
+        width: 100%;
+        padding: 0 2rem;
+        flex-direction: column;
+
+        .contacts-header {
+          width: 90vw;
+          h2 {
+            text-align: center;
+          }
+        }
+
+        .divContacsForm {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .contacts-form {
+            justify-content: center;
+            align-items: center;
+            
+            .contacts-input, .contacts-textarea{
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .socialContainer {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Caso os botões de mídias sociais estejam em .socialButtons, torne-os parte do fluxo normal */
+  .socialButtons {
+    position: static;
+    display: flex;
+    gap: 1rem;
+  }
 }
