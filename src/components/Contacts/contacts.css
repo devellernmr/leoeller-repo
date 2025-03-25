@@ -217,9 +217,11 @@
             justify-content: center;
             align-items: center;
             
-            .contacts-input, .contacts-textarea{
+            .contacts-input, .contacts-textarea, .contacts-button{
               width: 300px;
             }
+
+
           }
         }
       }

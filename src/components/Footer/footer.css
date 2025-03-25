@@ -1,0 +1,15 @@
+.footerDiv {
+    background-color: #00000048;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+
+    p {
+        filter: drop-shadow(0 0 1px white);
+    }
+}
